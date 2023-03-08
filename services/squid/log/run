@@ -1,0 +1,4 @@
+#!/bin/bash
+exec 2>&1
+exec multilog t s500000 n10 /var/log/squid
+

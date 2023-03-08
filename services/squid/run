@@ -1,0 +1,8 @@
+#!/bin/bash
+exec 2>&1
+
+if [ ! -d "/var/spool/squid/00" ]; then
+  sudo -u proxy -- /usr/sbin/squid -z
+fi
+
+exec /usr/sbin/squid -d 10 --foreground
